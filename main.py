@@ -5,7 +5,11 @@ import re
 #@DadosDeRpg_bot
 #RpgDiceBot
 
-bot = telebot.TeleBot('xxx')
+idbot = ""
+with open('id_bot.txt', 'r', encoding='utf-8') as arquivo:
+    idbot = arquivo.read()
+print("idbot: " + idbot)
+bot = telebot.TeleBot(idbot)
 
 @bot.message_handler(commands=['start', 'help'])
 def start(msg: telebot.types.Message):
